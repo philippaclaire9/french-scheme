@@ -3,6 +3,11 @@ import '../lessons.css';
 import ViewToggler2 from './ViewToggler2';
 import ViewToggler3 from './ViewToggler3';
 import ViewToggler4 from './ViewToggler4';
+import ViewToggler5 from './ViewToggler5';
+import ViewToggler6 from './ViewToggler6';
+import ViewToggler7 from './ViewToggler7';
+import ViewToggler8 from './ViewToggler8';
+import ViewToggler9 from './ViewToggler9';
 
 class Y3Lesson1 extends Component {
   state = { reveal: false };
@@ -27,11 +32,16 @@ class Y3Lesson1 extends Component {
           <ViewToggler3></ViewToggler3>
           <br />
           <ViewToggler4></ViewToggler4>
-          <p className="speaker-2">Je m'appelle Cléo</p>
-          <p className="speaker-1">Ça va?</p>
-          <p className="speaker-2">Ça va bien</p>
-          <p className="speaker-1">Au revoir!</p>
-          <p className="speaker-2">Au revoir!</p>{' '}
+          <br />
+          <ViewToggler5></ViewToggler5>
+          <br />
+          <ViewToggler6></ViewToggler6>
+          <br />
+          <ViewToggler7></ViewToggler7>
+          <br />
+          <ViewToggler8></ViewToggler8>
+          <br />
+          <ViewToggler9></ViewToggler9>
         </section>
 
         {/* <ViewToggler>
