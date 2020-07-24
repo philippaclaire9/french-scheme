@@ -8,15 +8,21 @@ import ViewToggler6 from './ViewToggler6';
 import ViewToggler7 from './ViewToggler7';
 import ViewToggler8 from './ViewToggler8';
 import ViewToggler9 from './ViewToggler9';
+import { Link } from '@reach/router';
+import Y3Lesson1audio from '../audio/Y3Lesson1audio.wav';
+import Sound from 'react-sound';
+import playbutton from '../images/playbutton.png';
 
 class Y3Lesson1 extends Component {
-  state = { reveal: false };
-  handleClick = () => {
-    if (this.state.reveal) {
-      this.setState({ reveal: false });
-    } else {
-      this.setState({ reveal: true });
-    }
+  state = { isPlaying: false };
+  handleClick = (event) => {
+    //event.preventDefault();
+
+    this.setState((currentState) => {
+      return {
+        isPlaying: !currentState.isPlaying,
+      };
+    });
   };
   render() {
     return (
@@ -27,6 +33,25 @@ class Y3Lesson1 extends Component {
           are saying? If you're not sure, click below to see the translation
         </p>
         <section className="comic-strip">
+          <button className="play" onClick={this.handleClick}>
+            <img className="play-button" src={playbutton} alt="play" />
+          </button>
+
+          <br />
+          {this.state.isPlaying && (
+            <Sound url={Y3Lesson1audio} playStatus={Sound.status.PLAYING} />
+          )}
+          {/* <audio>
+            <source src={Y3Lesson1audio} type="audio/ogg" />
+            <source src={Y3Lesson1audio} type="audio/mpeg" />
+            <source src={Y3Lesson1audio} type="audio/wav" />
+          </audio> */}
+          {/* <audio controls>
+            <source src={Y3Lesson1audio} type="audio/ogg" />
+            <source src={Y3Lesson1audio} type="audio/mpeg" />
+            Your browser does not support this{' '}
+          </audio> */}
+
           <ViewToggler2> </ViewToggler2>
           <br />
           <ViewToggler3></ViewToggler3>
@@ -43,7 +68,6 @@ class Y3Lesson1 extends Component {
           <br />
           <ViewToggler9></ViewToggler9>
         </section>
-
         {/* <ViewToggler>
           <section className="comic-strip">
             <p className="speaker-1a">Hello!</p>
@@ -56,6 +80,31 @@ class Y3Lesson1 extends Component {
             <p className="speaker-2a">Goodbye!</p>{' '}
           </section>
         </ViewToggler> */}
+        <p>When you're ready, click below to test yourself in a game</p>
+        <Link to="Game1">Game</Link>
+        <br />
+
+        <footer className="footer">
+          <p>
+            Icons made by{' '}
+            <a
+              className="footer"
+              href="https://www.flaticon.com/authors/freepik"
+              title="Freepik"
+            >
+              Freepik
+            </a>{' '}
+            from{' '}
+            <a
+              className="footer"
+              href="https://www.flaticon.com/"
+              title="Flaticon"
+            >
+              {' '}
+              www.flaticon.com
+            </a>
+          </p>
+        </footer>
       </main>
     );
   }

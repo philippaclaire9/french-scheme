@@ -3,6 +3,22 @@
   background-color: white;
 }
 
+.footer {
+  color: grey;
+  text-decoration: none;
+  font-size: x-small;
+}
+
+.play-button {
+  height: 16px;
+  width: 16px;
+}
+
+.play {
+  background-color: white;
+  border: none;
+}
+
 .speaker-1 {
   background-color: lightsalmon;
   width: 100px;
