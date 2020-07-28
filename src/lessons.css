@@ -21,6 +21,8 @@
 
 .speaker-1-lesson {
   background-color: lightsalmon;
+  border: solid;
+  border-color: salmon;
   width: 100px;
   max-height: 50px;
   text-align: center;
@@ -31,6 +33,8 @@
 
 .speaker-2-lesson {
   background-color: lightseagreen;
+  border: solid;
+  border-color: darkcyan;
   width: 100px;
   max-height: 50px;
   text-align: center;
@@ -40,7 +44,9 @@
 }
 
 .speaker-1a-lesson {
-  background-color: lightcoral;
+  background-color: salmon;
+  border: solid;
+  border-color: lightsalmon;
   width: 100px;
   max-height: 50px;
   text-align: center;
@@ -51,6 +57,8 @@
 
 .speaker-2a-lesson {
   background-color: darkcyan;
+  border: solid;
+  border-color: lightseagreen;
   width: 100px;
   max-height: 50px;
   text-align: center;
