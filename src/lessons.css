@@ -19,38 +19,42 @@
   border: none;
 }
 
-.speaker-1 {
+.speaker-1-lesson {
   background-color: lightsalmon;
   width: 100px;
   max-height: 50px;
   text-align: center;
   padding: 3px;
   font-size: medium;
+  /* margin-bottom: 5px; */
 }
 
-.speaker-2 {
+.speaker-2-lesson {
   background-color: lightseagreen;
   width: 100px;
   max-height: 50px;
   text-align: center;
   padding: 3px;
   font-size: medium;
+  /* margin-bottom: 5px; */
 }
 
-.speaker-1a {
+.speaker-1a-lesson {
   background-color: lightcoral;
   width: 100px;
   max-height: 50px;
   text-align: center;
   padding: 3px;
   font-size: medium;
+  /* margin-bottom: 5px; */
 }
 
-.speaker-2a {
+.speaker-2a-lesson {
   background-color: darkcyan;
   width: 100px;
   max-height: 50px;
   text-align: center;
   padding: 3px;
   font-size: medium;
+  /* margin-bottom: 5px; */
 }

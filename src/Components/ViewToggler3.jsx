@@ -16,9 +16,9 @@ class ViewToggler3 extends Component {
         {' '}
         <button className="button" onClick={this.handleClick}>
           {this.state.isVisible ? (
-            <p className="speaker-2a">Hello!</p>
+            <p className="speaker-2a-lesson">Hello!</p>
           ) : (
-            <p className="speaker-2">Bonjour!</p>
+            <p className="speaker-2-lesson">Bonjour!</p>
           )}
         </button>
       </>

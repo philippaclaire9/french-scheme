@@ -5,25 +5,83 @@ import Card from './Card';
 import '../games.css';
 
 class Y3Game1 extends Component {
+  state = {
+    speaker1Phrases: ["Je m'appelle Claude", 'Ça va?', 'Bonjour', 'Au revoir'],
+    speaker2Phrases: [
+      'Au revoir',
+      'Bonjour',
+      'Ça va bien',
+      "Je m'appelle Cléo",
+    ],
+  };
+
   render() {
     return (
-      <main className="flexbox">
-        <Boards id="board-main" className="start-board">
-          <Card id="bonjour-1" className="speaker-1">
-            Bonjour
-          </Card>
-          <Card id="bonjour-2" className="speaker-2">
-            Bonjour
-          </Card>
-        </Boards>
+      <main>
+        <section className="flexbox-1">
+          <Boards id="board-main" className="start-board">
+            <section className="board-flexbox">
+              {' '}
+              {this.state.speaker1Phrases.map((phrase) => {
+                return (
+                  <Card
+                    id={`${phrase}-${phrase.index + 1}`}
+                    className="speaker-1"
+                  >
+                    {phrase}
+                  </Card>
+                );
+              })}
+            </section>
+            <section className="board-flexbox">
+              {this.state.speaker2Phrases.map((phrase) => {
+                return (
+                  <Card
+                    id={`${phrase}-${phrase.index + 1}`}
+                    className="speaker-2"
+                  >
+                    {phrase}
+                  </Card>
+                );
+              })}
+            </section>
+
+            {/* {this.state.speaker1Phrases.map(phrase => { return 
+              (<Card id={`${phrase}-${phrase.index+1}` className="speaker-1"}>{phrase}</Card>)
+            })} */}
+          </Boards>
+        </section>
+        <section className="flexbox-2">
+          <Boards id="board-1" className="receiver-board">
+            1
+          </Boards>
+          <Boards id="board-2" className="receiver-board">
+            2
+          </Boards>
+          <Boards id="board-3" className="receiver-board">
+            3
+          </Boards>
+          <Boards id="board-4" className="receiver-board">
+            4
+          </Boards>
+        </section>
+        <section className="flexbox-2">
+          <Boards id="board-5" className="receiver-board">
+            5
+          </Boards>
+          <Boards id="board-6" className="receiver-board">
+            6
+          </Boards>
+          <Boards id="board-7" className="receiver-board">
+            7
+          </Boards>
+          <Boards id="board-8" className="receiver-board">
+            8
+          </Boards>
+        </section>
+
         <br />
         <br />
-        <Boards id="board-1" className="receiver-board">
-          1
-        </Boards>
-        <Boards id="board-2" className="receiver-board">
-          2
-        </Boards>
 
         {/* <Draggable>
           <div className="speaker-1">Bonjour</div>
