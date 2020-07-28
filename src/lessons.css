@@ -6,7 +6,7 @@
 .footer {
   color: grey;
   text-decoration: none;
-  font-size: x-small;
+  font-size: x-medium;
 }
 
 .play-button {
@@ -22,31 +22,35 @@
 .speaker-1 {
   background-color: lightsalmon;
   width: 100px;
-  max-height: 40px;
+  max-height: 50px;
   text-align: center;
   padding: 3px;
+  font-size: medium;
 }
 
 .speaker-2 {
   background-color: lightseagreen;
   width: 100px;
-  max-height: 40px;
+  max-height: 50px;
   text-align: center;
   padding: 3px;
+  font-size: medium;
 }
 
 .speaker-1a {
   background-color: lightcoral;
   width: 100px;
-  max-height: 40px;
+  max-height: 50px;
   text-align: center;
   padding: 3px;
+  font-size: medium;
 }
 
 .speaker-2a {
   background-color: darkcyan;
   width: 100px;
-  max-height: 40px;
+  max-height: 50px;
   text-align: center;
   padding: 3px;
+  font-size: medium;
 }

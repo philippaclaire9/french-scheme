@@ -9,7 +9,7 @@ import Y3Game1 from './Components/Y3Game1';
 function App() {
   return (
     <div className="App">
-      <h1>French appy app app</h1>
+      <h1 className="header">French appy app app</h1>
       <Nav />
       <Router>
         <Home path="/" />
