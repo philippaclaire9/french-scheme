@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <h1 className="header">French appy app app</h1>
       <Nav />
-      <Router>
+      <Router primary={false}>
         <Home path="/" />
         <Year3Start path="year_3" />
         <Y3Lesson1 path="year_3/Lesson1" />

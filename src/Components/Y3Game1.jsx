@@ -15,9 +15,17 @@ class Y3Game1 extends Component {
     ],
   };
 
+  handleClick = (e) => {
+    console.log(e);
+  };
+
   render() {
     return (
       <main>
+        <p>
+          Drag and drop the phrases into the correct order to create a
+          conversation that makes sense and where the speakers take it in turns.
+        </p>
         <section className="flexbox-1">
           <Boards id="board-main" className="start-board">
             <section className="board-flexbox">
@@ -25,7 +33,9 @@ class Y3Game1 extends Component {
               {this.state.speaker1Phrases.map((phrase) => {
                 return (
                   <Card
-                    id={`${phrase}-${phrase.index + 1}`}
+                    id={`${phrase}-${
+                      this.state.speaker1Phrases.indexOf(phrase) + 1
+                    }`}
                     className="speaker-1"
                   >
                     {phrase}
@@ -37,7 +47,9 @@ class Y3Game1 extends Component {
               {this.state.speaker2Phrases.map((phrase) => {
                 return (
                   <Card
-                    id={`${phrase}-${phrase.index + 1}`}
+                    id={`${phrase}-${
+                      this.state.speaker2Phrases.indexOf(phrase) + 1
+                    }`}
                     className="speaker-2"
                   >
                     {phrase}
@@ -80,8 +92,7 @@ class Y3Game1 extends Component {
           </Boards>
         </section>
 
-        <br />
-        <br />
+        <button onClick={this.handleClick}>Check answers</button>
 
         {/* <Draggable>
           <div className="speaker-1">Bonjour</div>
