@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import Boards from './Boards';
 import Card from './Card';
+import { Link } from '@reach/router';
 import '../games.css';
 
 class Y3Game1 extends Component {
@@ -13,10 +14,28 @@ class Y3Game1 extends Component {
       'Ça va bien',
       "Je m'appelle Cléo",
     ],
+    correctAnswers: 0,
+    isCorrect: false,
+    hasIncorrectlyAttempted: false,
   };
 
   handleClick = (e) => {
-    console.log(e);
+    if (this.state.correctAnswers === 8) {
+      this.setState({ isCorrect: true });
+    } else {
+      this.setState({ hasIncorrectlyAttempted: true });
+    }
+  };
+
+  addAnswers = () => {
+    this.setState(
+      (prevState) => {
+        return { correctAnswers: prevState.correctAnswers++ };
+      },
+      () => {
+        console.log(this.state.correctAnswers);
+      }
+    );
   };
 
   render() {
@@ -27,17 +46,16 @@ class Y3Game1 extends Component {
           conversation that makes sense and where the speakers take it in turns.
         </p>
         <section className="flexbox-1">
-          <Boards id="board-main" className="start-board">
+          <Boards
+            id="board-main"
+            className="start-board"
+            addAnswers={this.addAnswers}
+          >
             <section className="board-flexbox">
               {' '}
               {this.state.speaker1Phrases.map((phrase) => {
                 return (
-                  <Card
-                    id={`${phrase}-${
-                      this.state.speaker1Phrases.indexOf(phrase) + 1
-                    }`}
-                    className="speaker-1"
-                  >
+                  <Card id={phrase} className="speaker-1">
                     {phrase}
                   </Card>
                 );
@@ -46,12 +64,7 @@ class Y3Game1 extends Component {
             <section className="board-flexbox">
               {this.state.speaker2Phrases.map((phrase) => {
                 return (
-                  <Card
-                    id={`${phrase}-${
-                      this.state.speaker2Phrases.indexOf(phrase) + 1
-                    }`}
-                    className="speaker-2"
-                  >
+                  <Card id={phrase} className="speaker-2">
                     {phrase}
                   </Card>
                 );
@@ -64,35 +77,78 @@ class Y3Game1 extends Component {
           </Boards>
         </section>
         <section className="flexbox-2">
-          <Boards id="board-1" className="receiver-board">
+          <Boards
+            id="Bonjour"
+            className="receiver-board"
+            addAnswers={this.addAnswers}
+          >
             1
           </Boards>
-          <Boards id="board-2" className="receiver-board">
+          <Boards
+            id="Bonjour"
+            className="receiver-board"
+            addAnswers={this.addAnswers}
+          >
             2
           </Boards>
-          <Boards id="board-3" className="receiver-board">
+          <Boards
+            id="Je m'appelle Claude"
+            className="receiver-board"
+            addAnswers={this.addAnswers}
+          >
             3
           </Boards>
-          <Boards id="board-4" className="receiver-board">
+          <Boards
+            id="Je m'appelle Cléo"
+            className="receiver-board"
+            addAnswers={this.addAnswers}
+          >
             4
           </Boards>
         </section>
         <section className="flexbox-2">
-          <Boards id="board-5" className="receiver-board">
+          <Boards
+            id="Ça va?"
+            className="receiver-board"
+            addAnswers={this.addAnswers}
+          >
             5
           </Boards>
-          <Boards id="board-6" className="receiver-board">
+          <Boards
+            id="Ça va bien"
+            className="receiver-board"
+            addAnswers={this.addAnswers}
+          >
             6
           </Boards>
-          <Boards id="board-7" className="receiver-board">
+          <Boards
+            id="Au revoir"
+            className="receiver-board"
+            addAnswers={this.addAnswers}
+          >
             7
           </Boards>
-          <Boards id="board-8" className="receiver-board">
+          <Boards
+            id="Au revoir"
+            className="receiver-board"
+            addAnswers={this.addAnswers}
+          >
             8
           </Boards>
         </section>
+        {this.state.isCorrect && (
+          <div>
+            {' '}
+            <p>Wahooo!! All correct!</p> <Link to="Lesson2">Next lesson</Link>
+          </div>
+        )}
+        {this.state.hasIncorrectlyAttempted && (
+          <p>Oops, not quite right this time, try again</p>
+        )}
 
-        <button onClick={this.handleClick}>Check answers</button>
+        <button onClick={this.handleClick} className="check-button">
+          Check answers
+        </button>
 
         {/* <Draggable>
           <div className="speaker-1">Bonjour</div>

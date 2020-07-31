@@ -6,8 +6,11 @@ const Boards = (props) => {
     const card_id = e.dataTransfer.getData('card_id');
     const card = document.getElementById(card_id);
     card.style.display = 'block';
-
+    console.log(props);
     e.target.appendChild(card);
+    if (card_id === props.id) {
+      props.addAnswers();
+    }
     console.log(card_id, props.id);
   };
 
