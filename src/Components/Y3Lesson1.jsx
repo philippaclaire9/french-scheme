@@ -41,16 +41,6 @@ class Y3Lesson1 extends Component {
           {this.state.isPlaying && (
             <Sound url={Y3Lesson1audio} playStatus={Sound.status.PLAYING} />
           )}
-          {/* <audio>
-            <source src={Y3Lesson1audio} type="audio/ogg" />
-            <source src={Y3Lesson1audio} type="audio/mpeg" />
-            <source src={Y3Lesson1audio} type="audio/wav" />
-          </audio> */}
-          {/* <audio controls>
-            <source src={Y3Lesson1audio} type="audio/ogg" />
-            <source src={Y3Lesson1audio} type="audio/mpeg" />
-            Your browser does not support this{' '}
-          </audio> */}
 
           <ViewToggler2> </ViewToggler2>
           <br />
@@ -68,18 +58,7 @@ class Y3Lesson1 extends Component {
           <br />
           <ViewToggler9></ViewToggler9>
         </section>
-        {/* <ViewToggler>
-          <section className="comic-strip">
-            <p className="speaker-1a">Hello!</p>
-            <p className="speaker-2a">Hello!</p>
-            <p className="speaker-1a">My name is Claude</p>
-            <p className="speaker-2a">My name is Cléo</p>
-            <p className="speaker-1a">How are you?</p>
-            <p className="speaker-2a">I am good</p>
-            <p className="speaker-1a">Goodbye!</p>
-            <p className="speaker-2a">Goodbye!</p>{' '}
-          </section>
-        </ViewToggler> */}
+
         <p>When you're ready, click below to test yourself in a game</p>
         <Link to="Game1">Game</Link>
         <br />

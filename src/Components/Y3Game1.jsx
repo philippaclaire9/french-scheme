@@ -136,20 +136,19 @@ class Y3Game1 extends Component {
             8
           </Boards>
         </section>
-        {this.state.isCorrect && (
-          <div>
-            {' '}
-            <p>Wahooo!! All correct!</p> <Link to="Lesson2">Next lesson</Link>
-          </div>
+        {/* {this.state.isCorrect && ( */}
+        <div>
+          {' '}
+          <p>Wahooo!! All correct!</p>{' '}
+          <Link to="/year_3/Lesson2">Next lesson</Link>
+        </div>
         )}
         {this.state.hasIncorrectlyAttempted && (
           <p>Oops, not quite right this time, try again</p>
         )}
-
         <button onClick={this.handleClick} className="check-button">
           Check answers
         </button>
-
         {/* <Draggable>
           <div className="speaker-1">Bonjour</div>
         </Draggable>
