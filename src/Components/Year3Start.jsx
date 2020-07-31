@@ -14,7 +14,7 @@ const Year3Start = () => {
       </h3>
       <Link to="Lesson1">Lesson 1- Greetings</Link>
       <br />
-      <Link to="Lesson2">Lesson 2- Colours</Link>
+      <Link to="Lesson2">Lesson 2- Numbers</Link>
     </main>
   );
 };

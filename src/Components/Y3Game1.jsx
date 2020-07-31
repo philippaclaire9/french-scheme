@@ -136,12 +136,12 @@ class Y3Game1 extends Component {
             8
           </Boards>
         </section>
-        {/* {this.state.isCorrect && ( */}
-        <div>
-          {' '}
-          <p>Wahooo!! All correct!</p>{' '}
-          <Link to="/year_3/Lesson2">Next lesson</Link>
-        </div>
+        {this.state.isCorrect && (
+          <div>
+            {' '}
+            <p>Wahooo!! All correct!</p>{' '}
+            <Link to="/year_3/Lesson2">Next lesson</Link>
+          </div>
         )}
         {this.state.hasIncorrectlyAttempted && (
           <p>Oops, not quite right this time, try again</p>
@@ -149,19 +149,6 @@ class Y3Game1 extends Component {
         <button onClick={this.handleClick} className="check-button">
           Check answers
         </button>
-        {/* <Draggable>
-          <div className="speaker-1">Bonjour</div>
-        </Draggable>
-        <Draggable>
-          <div className="speaker-2">Bonjour</div>
-        </Draggable>
-        <Draggable>
-          <div className="speaker-1">Je m'appelle Claude</div>
-        </Draggable>
-        <Draggable>
-          <div className="speaker-2">Je m'appelle Cléo</div>
-        </Draggable>
-        <div className="box"></div> */}
       </main>
     );
   }

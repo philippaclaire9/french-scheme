@@ -3,9 +3,11 @@ import { Router } from '@reach/router';
 import Home from './Components/Home';
 import Nav from './Components/Nav';
 import Year3Start from './Components/Year3Start';
-import './App.css';
 import Y3Lesson1 from './Components/Y3Lesson1';
 import Y3Game1 from './Components/Y3Game1';
+import './App.css';
+import Y3Lesson2 from './Components/Y3Lesson2';
+
 function App() {
   return (
     <div className="App">
@@ -16,6 +18,7 @@ function App() {
         <Year3Start path="year_3" />
         <Y3Lesson1 path="year_3/Lesson1" />
         <Y3Game1 path="year_3/Lesson1/Game1" />
+        <Y3Lesson2 path="year_3/Lesson2" />
       </Router>
     </div>
   );
