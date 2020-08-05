@@ -12,9 +12,13 @@ const Year3Start = () => {
       <h3>
         Welcome to the Year 3 page. Click on lesson 1 below to get started
       </h3>
-      <Link to="Lesson1">Lesson 1- Greetings</Link>
+      <Link to="Lesson1" className="lesson-links">
+        Lesson 1- Greetings
+      </Link>
       <br />
-      <Link to="Lesson2">Lesson 2- Numbers</Link>
+      <Link to="Lesson2" className="lesson-links">
+        Lesson 2- Numbers
+      </Link>
     </main>
   );
 };

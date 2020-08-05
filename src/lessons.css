@@ -66,3 +66,15 @@
   font-size: medium;
   /* margin-bottom: 5px; */
 }
+
+.lesson-links {
+  text-decoration: none;
+}
+
+.number-buttons {
+  background-color: seagreen;
+  border: solid;
+  border-color: seagreen;
+  width: 40px;
+  margin-right: 15px;
+}
