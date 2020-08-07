@@ -41,6 +41,7 @@ class Y3Game1 extends Component {
   render() {
     return (
       <main>
+        <h2>Game 1- Greetings</h2>
         <p>
           Drag and drop the phrases into the correct order to create a
           conversation that makes sense and where the speakers take it in turns.

@@ -89,3 +89,26 @@
 .check-button {
   margin: 15px;
 }
+
+.number-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  /* max-width: 768px; */
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+span {
+  font-size: x-large;
+}
+
+.number-buttons {
+  background-color: rgb(165, 202, 181);
+  border: solid;
+  border-color: rgb(165, 202, 181);
+  width: 175px;
+  height: 100px;
+  margin-right: 15px;
+}
