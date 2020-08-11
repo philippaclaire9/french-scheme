@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Sound from 'react-sound';
 import '../games.css';
+import { Link } from '@reach/router';
 import un from '../audio/un.wav';
 import deux from '../audio/deux.wav';
 import trois from '../audio/trois.wav';
@@ -24,6 +25,18 @@ class Y3Game2 extends Component {
     isPlaying8: false,
     isPlaying9: false,
     isPlayingX: false,
+    '1': null,
+    '2': null,
+    '3': null,
+    '4': null,
+    '5': null,
+    '6': null,
+    '7': null,
+    '8': null,
+    '9': null,
+    '10': null,
+    isIncorrect: false,
+    hasAttempted: false,
   };
 
   handleClick = (event) => {
@@ -42,9 +55,28 @@ class Y3Game2 extends Component {
     }
   };
 
+  handleChange = (event) => {
+    const { value } = event.target;
+    const { id } = event.target;
+
+    this.setState({ [id]: value });
+    // this.setState({ numberAnswers[id]: value}, () => {
+    //   console.log(this.state.numberAnswers);
+    // });
+    // console.dir(event.target);
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submitted!');
+    this.setState({ hasAttempted: true });
+
+    for (const key in this.state) {
+      if (key.length <= 2) {
+        if (key !== this.state[key]) {
+          this.setState({ isIncorrect: true });
+        }
+      }
+    }
   };
 
   render() {
@@ -56,7 +88,7 @@ class Y3Game2 extends Component {
           correct number in the box. When you've put in all your answers, click
           the check answers button.
         </p>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           {' '}
           <section className="number-row">
             <section className="input-flexbox">
@@ -70,7 +102,14 @@ class Y3Game2 extends Component {
               {this.state.isPlaying8 && (
                 <Sound url={huit} playStatus={Sound.status.PLAYING} />
               )}{' '}
-              <input type="text" name="8" id="8" className="number-input" />
+              <input
+                type="text"
+                name="8"
+                id="8"
+                className="number-input"
+                required
+                onChange={this.handleChange}
+              />
             </section>
             <section className="input-flexbox">
               <button
@@ -83,7 +122,14 @@ class Y3Game2 extends Component {
               {this.state.isPlaying3 && (
                 <Sound url={trois} playStatus={Sound.status.PLAYING} />
               )}{' '}
-              <input type="text" name="3" id="3" className="number-input" />
+              <input
+                type="text"
+                name="3"
+                id="3"
+                className="number-input"
+                required
+                onChange={this.handleChange}
+              />
             </section>
             <section className="input-flexbox">
               <button
@@ -96,7 +142,14 @@ class Y3Game2 extends Component {
               {this.state.isPlaying1 && (
                 <Sound url={un} playStatus={Sound.status.PLAYING} />
               )}
-              <input type="text" name="1" id="1" className="number-input" />
+              <input
+                type="text"
+                name="1"
+                id="1"
+                className="number-input"
+                onChange={this.handleChange}
+                required
+              />
             </section>
             <section className="input-flexbox">
               {' '}
@@ -110,7 +163,14 @@ class Y3Game2 extends Component {
               {this.state.isPlayingX && (
                 <Sound url={dix} playStatus={Sound.status.PLAYING} />
               )}
-              <input type="text" name="10" id="10" className="number-input" />
+              <input
+                type="text"
+                name="10"
+                id="10"
+                className="number-input"
+                onChange={this.handleChange}
+                required
+              />
             </section>
 
             <section className="input-flexbox">
@@ -124,7 +184,14 @@ class Y3Game2 extends Component {
               {this.state.isPlaying2 && (
                 <Sound url={deux} playStatus={Sound.status.PLAYING} />
               )}
-              <input type="text" name="2" id="2" className="number-input" />
+              <input
+                type="text"
+                name="2"
+                id="2"
+                className="number-input"
+                onChange={this.handleChange}
+                required
+              />
             </section>
           </section>
           <section className="number-row">
@@ -139,7 +206,14 @@ class Y3Game2 extends Component {
               {this.state.isPlaying9 && (
                 <Sound url={neuf} playStatus={Sound.status.PLAYING} />
               )}{' '}
-              <input type="text" name="9" id="9" className="number-input" />
+              <input
+                type="text"
+                name="9"
+                id="9"
+                className="number-input"
+                onChange={this.handleChange}
+                required
+              />
             </section>
             <section className="input-flexbox">
               {' '}
@@ -153,7 +227,14 @@ class Y3Game2 extends Component {
               {this.state.isPlaying4 && (
                 <Sound url={quatre} playStatus={Sound.status.PLAYING} />
               )}
-              <input type="text" name="4" id="4" className="number-input" />
+              <input
+                type="text"
+                name="4"
+                id="4"
+                className="number-input"
+                onChange={this.handleChange}
+                required
+              />
             </section>
             <section className="input-flexbox">
               <button
@@ -166,7 +247,14 @@ class Y3Game2 extends Component {
               {this.state.isPlaying7 && (
                 <Sound url={sept} playStatus={Sound.status.PLAYING} />
               )}{' '}
-              <input type="text" name="7" id="7" className="number-input" />
+              <input
+                type="text"
+                name="7"
+                id="7"
+                className="number-input"
+                onChange={this.handleChange}
+                required
+              />
             </section>
             <section className="input-flexbox">
               {' '}
@@ -180,7 +268,14 @@ class Y3Game2 extends Component {
               {this.state.isPlaying6 && (
                 <Sound url={six} playStatus={Sound.status.PLAYING} />
               )}
-              <input type="text" name="6" id="6" className="number-input" />
+              <input
+                type="text"
+                name="6"
+                id="6"
+                className="number-input"
+                onChange={this.handleChange}
+                required
+              />
             </section>
             <section className="input-flexbox">
               <button
@@ -193,15 +288,32 @@ class Y3Game2 extends Component {
               {this.state.isPlaying5 && (
                 <Sound url={cinq} playStatus={Sound.status.PLAYING} />
               )}{' '}
-              <input type="text" name="5" id="5" className="number-input" />
+              <input
+                type="text"
+                name="5"
+                id="5"
+                className="number-input"
+                onChange={this.handleChange}
+                required
+              />
             </section>
           </section>
-          <input
-            type="submit"
-            value="Check answers"
-            onSubmit={this.handleSubmit}
-          />
+          <input type="submit" value="Check answers" />
         </form>
+        {this.state.hasAttempted && !this.state.isIncorrect && (
+          <div>
+            <p>Yay! All correct</p>
+            <Link to="/year_3/Lesson3">Next lesson</Link>
+          </div>
+        )}
+        {this.state.hasAttempted && this.state.isIncorrect && (
+          <div>
+            <p>Not quite right</p>
+            <button onClick={() => window.location.reload(false)}>
+              Try again
+            </button>
+          </div>
+        )}
       </main>
     );
   }
