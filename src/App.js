@@ -7,6 +7,7 @@ import Y3Lesson1 from './Components/Y3Lesson1';
 import Y3Game1 from './Components/Y3Game1';
 import './App.css';
 import Y3Lesson2 from './Components/Y3Lesson2';
+import Y3Game2 from './Components/Y3Game2';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Y3Lesson1 path="year_3/Lesson1" />
         <Y3Game1 path="year_3/Lesson1/Game1" />
         <Y3Lesson2 path="year_3/Lesson2" />
+        <Y3Game2 path="year_3/Lesson2/Game2" />
       </Router>
     </div>
   );

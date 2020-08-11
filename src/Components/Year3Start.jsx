@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import Y3Lesson1 from './Y3Lesson1';
-import Y3Game1 from './Y3Game1';
-import Y3Lesson2 from './Y3Lesson2';
 
 const Year3Start = () => {
   return (
