@@ -16,6 +16,10 @@ const Year3Start = () => {
       <Link to="Lesson2" className="lesson-links">
         Lesson 2- Numbers
       </Link>
+      <br />
+      <Link to="Lesson3" className="lesson-links">
+        Lesson 3- Colours
+      </Link>
     </main>
   );
 };

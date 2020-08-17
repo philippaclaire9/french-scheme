@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Draggable from 'react-draggable';
 import Boards from './Boards';
 import Card from './Card';
 import { Link } from '@reach/router';
