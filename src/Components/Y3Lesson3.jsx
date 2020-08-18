@@ -27,28 +27,45 @@ class Y3Lesson3 extends Component {
       ivert,
       iviolet,
     ],
+    words: [
+      'blanc',
+      'bleu',
+      'gris',
+      'jaune',
+      'noir',
+      'brun',
+      'orange',
+      'rose',
+      'rouge',
+      'vert',
+      'violet',
+    ],
     currentColour: iblanc,
     currentNumber: 0,
+    currentWord: 'blanc',
   };
 
   handleRightClick = () => {
-    if (this.state.currentNumber < 10) {
+    if (this.state.currentNumber < 11) {
       this.setState(
         (prevState) => ({
+          currentColour: this.state.colours[this.state.currentNumber],
+          currentWord: this.state.words[this.state.currentNumber],
           currentNumber: prevState.currentNumber + 1,
         }),
         () => {
           console.log(this.state.currentNumber);
         }
       );
-      this.setState({
-        currentColour: this.state.colours[this.state.currentNumber],
-      });
     }
 
-    if (this.state.currentNumber === 10) {
+    if (this.state.currentNumber === 11) {
       this.setState(
-        { currentNumber: 0, currentColour: this.state.colours[0] },
+        {
+          currentNumber: 0,
+          currentColour: this.state.colours[0],
+          currentWord: this.state.words[0],
+        },
         () => {
           console.log(this.state.currentNumber);
         }
@@ -60,15 +77,14 @@ class Y3Lesson3 extends Component {
     if (this.state.currentNumber !== 0) {
       this.setState(
         (prevState) => ({
+          currentColour: this.state.colours[this.state.currentNumber],
+          currentWord: this.state.words[this.state.currentNumber],
           currentNumber: prevState.currentNumber - 1,
         }),
         () => {
           console.log(this.state.currentNumber);
         }
       );
-      this.setState({
-        currentColour: this.state.colours[this.state.currentNumber],
-      });
     }
 
     if (this.state.currentNumber === 0) {
@@ -76,6 +92,7 @@ class Y3Lesson3 extends Component {
         {
           currentNumber: 10,
           currentColour: this.state.colours[10],
+          currentWord: this.state.words[10],
         },
         () => {
           console.log(this.state.currentNumber);
@@ -110,6 +127,7 @@ class Y3Lesson3 extends Component {
                 aria-label="RIGHTWARDS NEXT ARROW"
               ></i>
             </button>
+            <p>{this.state.currentWord}</p>
           </section>
         </div>
       </main>
