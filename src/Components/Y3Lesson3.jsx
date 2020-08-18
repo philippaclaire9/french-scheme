@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../lessons.css';
+import Sound from 'react-sound';
 import iblanc from '../images/colours/iblanc.jpg';
 import ibleu from '../images/colours/ibleu.jpg';
 import ibrun from '../images/colours/ibrun.jpg';
@@ -11,6 +12,17 @@ import irose from '../images/colours/irose.jpg';
 import irouge from '../images/colours/irouge.jpg';
 import ivert from '../images/colours/ivert.jpg';
 import iviolet from '../images/colours/iviolet.jpg';
+import blanc from '../audio/colours/blanc.wav';
+import bleu from '../audio/colours/bleu.wav';
+import brun from '../audio/colours/brun.wav';
+import gris from '../audio/colours/gris.wav';
+import jaune from '../audio/colours/jaune.wav';
+import noir from '../audio/colours/noir.wav';
+import orange from '../audio/colours/orange.wav';
+import rose from '../audio/colours/rose.wav';
+import rouge from '../audio/colours/rouge.wav';
+import vert from '../audio/colours/vert.wav';
+import violet from '../audio/colours/violet.wav';
 
 class Y3Lesson3 extends Component {
   state = {
@@ -40,9 +52,24 @@ class Y3Lesson3 extends Component {
       'vert',
       'violet',
     ],
+    audio: [
+      blanc,
+      bleu,
+      gris,
+      jaune,
+      noir,
+      brun,
+      orange,
+      rose,
+      rouge,
+      vert,
+      violet,
+    ],
     currentColour: iblanc,
     currentNumber: 0,
     currentWord: 'blanc',
+    currentAudio: blanc,
+    isPlaying: false,
   };
 
   handleRightClick = () => {
@@ -51,6 +78,7 @@ class Y3Lesson3 extends Component {
         (prevState) => ({
           currentColour: this.state.colours[this.state.currentNumber],
           currentWord: this.state.words[this.state.currentNumber],
+          currentAudio: this.state.audio[this.state.currentNumber],
           currentNumber: prevState.currentNumber + 1,
         }),
         () => {
@@ -101,6 +129,13 @@ class Y3Lesson3 extends Component {
     }
   };
 
+  handlePlay = () => {
+    this.setState({ isPlaying: true }, () => {
+      console.log('true');
+    });
+    setTimeout(() => this.setState({ isPlaying: false }), 1500);
+  };
+
   render() {
     return (
       <main>
@@ -116,11 +151,20 @@ class Y3Lesson3 extends Component {
             <button onClick={this.handleLeftClick}>
               <i class="em em-arrow_left" aria-label="LEFTWARDS BACK ARROW"></i>
             </button>
-            <img
-              className="colour-box"
-              src={this.state.currentColour}
-              alt="blue"
-            ></img>
+            <button className="colour-buttons" onClick={this.handlePlay}>
+              {' '}
+              <img
+                className="colour-box"
+                src={this.state.currentColour}
+                alt="blue"
+              ></img>
+            </button>
+            {this.state.isPlaying && (
+              <Sound
+                url={this.state.currentAudio}
+                playStatus={Sound.status.PLAYING}
+              />
+            )}
             <button onClick={this.handleRightClick}>
               <i
                 class="em em-arrow_right"

@@ -111,3 +111,9 @@ span {
   justify-content: center;
   margin: 15px;
 }
+
+.colour-buttons {
+  padding: 0;
+  background: none;
+  border: none;
+}
