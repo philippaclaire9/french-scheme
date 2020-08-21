@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../lessons.css';
 import Sound from 'react-sound';
+import { Link } from '@reach/router';
 import iblanc from '../images/colours/iblanc.jpg';
 import ibleu from '../images/colours/ibleu.jpg';
 import ibrun from '../images/colours/ibrun.jpg';
@@ -156,7 +157,7 @@ class Y3Lesson3 extends Component {
               <img
                 className="colour-box"
                 src={this.state.currentColour}
-                alt="blue"
+                alt={this.state.currentWord}
               ></img>
             </button>
             {this.state.isPlaying && (
@@ -174,6 +175,8 @@ class Y3Lesson3 extends Component {
             <p>{this.state.currentWord}</p>
           </section>
         </div>
+        <p>When you're confident, click below to test yourself in a game</p>
+        <Link to="Game3">Next game</Link>
       </main>
     );
   }

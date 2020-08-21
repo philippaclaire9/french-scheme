@@ -133,3 +133,27 @@ span {
   max-height: 40px;
   margin-left: 30px;
 }
+
+.colour-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.colours-container {
+  justify-content: center;
+  background-color: peachpuff;
+  width: 600px;
+  height: 200px;
+}
+
+.colour-box {
+  justify-content: center;
+  margin: 15px;
+}
+
+.icon-button {
+  border: solid;
+  border-color: white;
+  background-color: white;
+}
