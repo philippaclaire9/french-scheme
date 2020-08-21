@@ -51,12 +51,31 @@ class Y3Game3 extends Component {
       ivert,
       iviolet,
     ],
+    words: [
+      'blanc',
+      'bleu',
+      'gris',
+      'jaune',
+      'noir',
+      'brun',
+      'orange',
+      'rose',
+      'rouge',
+      'vert',
+      'violet',
+    ],
     isGamePlaying: false,
     currentColour1: null,
     currentColour2: null,
     currentColour3: null,
+    currentWord1: null,
+    currentWord2: null,
+    currentWord3: null,
     currentAudio: null,
+    correctWord: null,
     isAudioPlaying: false,
+    isCorrect: false,
+    score: 0,
   };
 
   handleClick = () => {
@@ -73,11 +92,16 @@ class Y3Game3 extends Component {
       num1 = Math.round(Math.random() * 11);
     }
 
+    console.log(num1, num2, num3);
+
     this.setState({
       isPlaying: true,
       currentColour1: this.state.colours[num1],
       currentColour2: this.state.colours[num2],
       currentColour3: this.state.colours[num3],
+      currentWord1: this.state.words[num1],
+      currentWord2: this.state.words[num2],
+      currentWord3: this.state.words[num3],
     });
 
     let randomAudio = Math.round(Math.random() * 3);
@@ -87,17 +111,27 @@ class Y3Game3 extends Component {
     }
     console.log(randomAudio);
     if (randomAudio === 1) {
-      this.setState({ currentAudio: this.state.audio[num1] });
+      this.setState({
+        currentAudio: this.state.audio[num1],
+        currentWord: this.state.words[num1],
+      });
     }
     if (randomAudio === 2) {
-      this.setState({ currentAudio: this.state.audio[num2] });
+      this.setState({
+        currentAudio: this.state.audio[num2],
+        currentWord: this.state.words[num2],
+      });
     }
     if (randomAudio === 3) {
-      this.setState({ currentAudio: this.state.audio[num3] });
+      this.setState({
+        currentAudio: this.state.audio[num3],
+        currentWord: this.state.words[num3],
+      });
     }
   };
 
-  handlePlay = () => {
+  handlePlay = (event) => {
+    event.preventDefault();
     this.setState({ isAudioPlaying: true });
     setTimeout(() => this.setState({ isAudioPlaying: false }), 3000);
 
@@ -115,6 +149,15 @@ class Y3Game3 extends Component {
     // }
 
     // console.log(num1, num2, num3);
+  };
+
+  handleAnswer = (event) => {
+    event.preventDefault();
+    console.log(event.target);
+    const { id } = event.target;
+    if (id === this.state.currentWord) {
+      this.setState({ isCorrect: true });
+    }
   };
 
   render() {
@@ -137,31 +180,49 @@ class Y3Game3 extends Component {
         {this.state.isPlaying && (
           <div className="colour-section">
             <section className="colours-container">
-              <img
-                className="colour-box"
-                src={this.state.currentColour1}
-                alt="blue"
-              ></img>
-              <img
-                className="colour-box"
-                src={this.state.currentColour2}
-                alt="blue"
-              ></img>
-              <img
-                className="colour-box"
-                src={this.state.currentColour3}
-                alt="blue"
-              ></img>
-              <br />
-              <button className="icon-button" onClick={this.handlePlay}>
-                <i class="em em-speaker" aria-label="SPEAKER"></i>
-              </button>
-              {this.state.isAudioPlaying && (
-                <Sound
-                  url={this.state.currentAudio}
-                  playStatus={Sound.status.PLAYING}
-                />
-              )}
+              <form>
+                {' '}
+                <button className="colour-buttons" onClick={this.handleAnswer}>
+                  {' '}
+                  <img
+                    className="colour-box"
+                    src={this.state.currentColour1}
+                    alt={this.state.currentWord1}
+                    id={this.state.currentWord1}
+                  ></img>
+                </button>
+                <button
+                  className="colour-buttons"
+                  onClick={this.handleAnswer}
+                  id={this.state.currentWord2}
+                >
+                  <img
+                    className="colour-box"
+                    src={this.state.currentColour2}
+                    alt={this.state.currentWord2}
+                    id={this.state.currentWord2}
+                  ></img>
+                </button>
+                <button className="colour-buttons" onClick={this.handleAnswer}>
+                  <img
+                    className="colour-box"
+                    src={this.state.currentColour3}
+                    alt={this.state.currentWord3}
+                    id={this.state.currentWord3}
+                  ></img>
+                </button>
+                <br />
+                <button className="icon-button" onClick={this.handlePlay}>
+                  <i class="em em-speaker" aria-label="SPEAKER"></i>
+                </button>
+                {this.state.isAudioPlaying && (
+                  <Sound
+                    url={this.state.currentAudio}
+                    playStatus={Sound.status.PLAYING}
+                  />
+                )}
+              </form>
+              <p>Score:{this.state.score}</p>
             </section>
           </div>
         )}

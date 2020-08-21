@@ -157,3 +157,9 @@ span {
   border-color: white;
   background-color: white;
 }
+
+.colour-buttons {
+  padding: 0;
+  background: none;
+  border: none;
+}
