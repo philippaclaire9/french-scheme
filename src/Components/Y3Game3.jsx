@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../games.css';
+import { Link } from '@reach/router';
 import blanc from '../audio/colours/blanc.wav';
 import bleu from '../audio/colours/bleu.wav';
 import brun from '../audio/colours/brun.wav';
@@ -75,24 +76,24 @@ class Y3Game3 extends Component {
     correctWord: null,
     isAudioPlaying: false,
     isCorrect: false,
+    isIncorrect: false,
+    isComplete: false,
     score: 0,
   };
 
-  handleClick = () => {
-    let num1 = Math.round(Math.random() * 11);
-    let num2 = Math.round(Math.random() * 11);
-    let num3 = Math.round(Math.random() * 11);
+  colourPicker = () => {
+    let num1 = Math.round(Math.random() * 10);
+    let num2 = Math.round(Math.random() * 10);
+    let num3 = Math.round(Math.random() * 10);
     if (num1 === num2) {
-      num2 = Math.round(Math.random() * 11);
+      num2 = Math.round(Math.random() * 10);
     }
     if (num2 === num3) {
-      num3 = Math.round(Math.random() * 11);
+      num3 = Math.round(Math.random() * 10);
     }
     if (num3 === num1) {
-      num1 = Math.round(Math.random() * 11);
+      num1 = Math.round(Math.random() * 10);
     }
-
-    console.log(num1, num2, num3);
 
     this.setState({
       isPlaying: true,
@@ -109,7 +110,7 @@ class Y3Game3 extends Component {
     if (randomAudio === 0) {
       randomAudio = Math.round(Math.random() * 3);
     }
-    console.log(randomAudio);
+
     if (randomAudio === 1) {
       this.setState({
         currentAudio: this.state.audio[num1],
@@ -130,33 +131,33 @@ class Y3Game3 extends Component {
     }
   };
 
+  handleClick = () => {
+    this.colourPicker();
+  };
+
   handlePlay = (event) => {
     event.preventDefault();
     this.setState({ isAudioPlaying: true });
     setTimeout(() => this.setState({ isAudioPlaying: false }), 3000);
-
-    // let num1 = Math.round(Math.random() * 11);
-    // let num2 = Math.round(Math.random() * 11);
-    // let num3 = Math.round(Math.random() * 11);
-    // if (num1 === num2) {
-    //   num2 = Math.round(Math.random() * 11);
-    // }
-    // if (num2 === num3) {
-    //   num3 = Math.round(Math.random() * 11);
-    // }
-    // if (num3 === num1) {
-    //   num1 = Math.round(Math.random() * 11);
-    // }
-
-    // console.log(num1, num2, num3);
   };
 
   handleAnswer = (event) => {
     event.preventDefault();
-    console.log(event.target);
+
     const { id } = event.target;
     if (id === this.state.currentWord) {
-      this.setState({ isCorrect: true });
+      this.setState((prevState) => ({
+        isCorrect: true,
+        score: prevState.score++,
+      }));
+      if (this.state.score === 11) {
+        this.setState({ isComplete: true });
+      }
+      setTimeout(() => this.setState({ isCorrect: false }), 1500);
+      this.colourPicker();
+    } else {
+      this.setState({ isIncorrect: true });
+      setTimeout(() => this.setState({ isIncorrect: false }), 1500);
     }
   };
 
@@ -166,8 +167,9 @@ class Y3Game3 extends Component {
         <h2>Game 3- Colours</h2>
         <p>
           In this game, you will hear a word and be given a choice of 3 colours.
-          Click on the correct colour to get a point. Once you have 11 points,
-          you can move onto the next lesson.
+          Click on speaker icon to hear the word and click the correct colour to
+          get a point. Once you have 11 points, you can move onto the next
+          lesson.
         </p>
         {!this.state.isPlaying && (
           <div>
@@ -222,8 +224,19 @@ class Y3Game3 extends Component {
                   />
                 )}
               </form>
+              {this.state.isCorrect && <p>Correct, well done!</p>}
+              {this.state.isIncorrect && <p>Oops, incorrect. Try again!</p>}
               <p>Score:{this.state.score}</p>
             </section>
+          </div>
+        )}
+        {this.state.isComplete && (
+          <div>
+            <p>
+              Well done! You've scored top marks! Click below to move onto the
+              next lesson!
+            </p>
+            <Link to="/year_3/Lesson4">Next lesson</Link>
           </div>
         )}
       </main>
