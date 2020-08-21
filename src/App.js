@@ -10,7 +10,7 @@ import Y3Lesson2 from './Components/Y3Lesson2';
 import Y3Game2 from './Components/Y3Game2';
 import Y3Lesson3 from './Components/Y3Lesson3';
 import Y3Game3 from './Components/Y3Game3';
-
+import Y3Lesson4 from './Components/Y3Lesson4';
 function App() {
   return (
     <div className="App">
@@ -25,6 +25,7 @@ function App() {
         <Y3Game2 path="year_3/Lesson2/Game2" />
         <Y3Lesson3 path="year_3/Lesson3" />
         <Y3Game3 path="year_3/Lesson3/Game3" />
+        <Y3Lesson4 path="year_3/Lesson4" />
       </Router>
     </div>
   );
