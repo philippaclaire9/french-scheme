@@ -1,0 +1,243 @@
+.centre-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.balloon-container {
+  background-image: url(./images/cloud-small.jpg);
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 400px;
+}
+
+.one {
+  animation: animationFrames ease-in-out 6s;
+  animation-iteration-count: infinite;
+  transform-origin: 0% 0%;
+  -webkit-animation: animationFrames ease-in-out 6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 0% 0%;
+  -moz-animation: animationFrames ease-in-out 6s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 0% 0%;
+  -o-animation: animationFrames ease-in-out 6s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 0% 0%;
+  -ms-animation: animationFrames ease-in-out 6s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 0% 0%;
+}
+
+@keyframes animationFrames {
+  0% {
+    transform: translate(-76px, 204px) rotate(0deg) scaleY(1);
+  }
+  25% {
+    transform: translate(12px, 150px) rotate(10deg) scaleY(1);
+  }
+  50% {
+    transform: translate(-109px, 76px) rotate(-10deg) scaleY(1);
+  }
+  75% {
+    transform: translate(45px, 20px) rotate(17deg) scaleY(1);
+  }
+  100% {
+    transform: translate(-91px, -39px) rotate(-10deg) scaleY(1);
+  }
+  100% {
+    transform: translate(-82px, -75px) rotate(-10deg) scaleY(NaN);
+  }
+}
+
+@-moz-keyframes animationFrames {
+  0% {
+    -moz-transform: translate(-76px, 204px) rotate(0deg) scaleY(1);
+  }
+  25% {
+    -moz-transform: translate(12px, 150px) rotate(10deg) scaleY(1);
+  }
+  50% {
+    -moz-transform: translate(-109px, 76px) rotate(-10deg) scaleY(1);
+  }
+  75% {
+    -moz-transform: translate(45px, 20px) rotate(17deg) scaleY(1);
+  }
+  100% {
+    -moz-transform: translate(-91px, -39px) rotate(-10deg) scaleY(1);
+  }
+  100% {
+    -moz-transform: translate(-82px, -75px) rotate(-10deg) scaleY(NaN);
+  }
+}
+
+@-webkit-keyframes animationFrames {
+  0% {
+    -webkit-transform: translate(-76px, 204px) rotate(0deg) scaleY(1);
+  }
+  25% {
+    -webkit-transform: translate(12px, 150px) rotate(10deg) scaleY(1);
+  }
+  50% {
+    -webkit-transform: translate(-109px, 76px) rotate(-10deg) scaleY(1);
+  }
+  75% {
+    -webkit-transform: translate(45px, 20px) rotate(17deg) scaleY(1);
+  }
+  100% {
+    -webkit-transform: translate(-91px, -39px) rotate(-10deg) scaleY(1);
+  }
+  100% {
+    -webkit-transform: translate(-82px, -75px) rotate(-10deg) scaleY(NaN);
+  }
+}
+
+@-o-keyframes animationFrames {
+  0% {
+    -o-transform: translate(-76px, 204px) rotate(0deg) scaleY(1);
+  }
+  25% {
+    -o-transform: translate(12px, 150px) rotate(10deg) scaleY(1);
+  }
+  50% {
+    -o-transform: translate(-109px, 76px) rotate(-10deg) scaleY(1);
+  }
+  75% {
+    -o-transform: translate(45px, 20px) rotate(17deg) scaleY(1);
+  }
+  100% {
+    -o-transform: translate(-91px, -39px) rotate(-10deg) scaleY(1);
+  }
+  100% {
+    -o-transform: translate(-82px, -75px) rotate(-10deg) scaleY(NaN);
+  }
+}
+
+@-ms-keyframes animationFrames {
+  0% {
+    -ms-transform: translate(-76px, 204px) rotate(0deg) scaleY(1);
+  }
+  25% {
+    -ms-transform: translate(12px, 150px) rotate(10deg) scaleY(1);
+  }
+  50% {
+    -ms-transform: translate(-109px, 76px) rotate(-10deg) scaleY(1);
+  }
+  75% {
+    -ms-transform: translate(45px, 20px) rotate(17deg) scaleY(1);
+  }
+  100% {
+    -ms-transform: translate(-91px, -39px) rotate(-10deg) scaleY(1);
+  }
+  100% {
+    -ms-transform: translate(-82px, -75px) rotate(-10deg) scaleY(NaN);
+  }
+}
+
+.two {
+  animation: twoAnimationFrames ease-out 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 0% 0%;
+  -webkit-animation: twoAnimationFrames ease-out 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 0% 0%;
+  -moz-animation: twoAnimationFrames ease-out 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 0% 0%;
+  -o-animation: twoAnimationFrames ease-out 4s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 0% 0%;
+  -ms-animation: twoAnimationFrames ease-out 4s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 0% 0%;
+}
+
+@keyframes twoAnimationFrames {
+  0% {
+    transform: translate(110px, 200px) rotate(0deg);
+  }
+  25% {
+    transform: translate(33px, 120px) rotate(-13deg);
+  }
+  51% {
+    transform: translate(166px, 81px) rotate(10deg);
+  }
+  81% {
+    transform: translate(53px, 7px) rotate(-10deg);
+  }
+  100% {
+    transform: translate(53px, 7px) rotate(-10deg);
+  }
+}
+
+@-moz-keyframes twoAnimationFrames {
+  0% {
+    -moz-transform: translate(110px, 200px) rotate(0deg);
+  }
+  25% {
+    -moz-transform: translate(33px, 120px) rotate(-13deg);
+  }
+  51% {
+    -moz-transform: translate(166px, 81px) rotate(10deg);
+  }
+  81% {
+    -moz-transform: translate(53px, 7px) rotate(-10deg);
+  }
+  100% {
+    -moz-transform: translate(53px, 7px) rotate(-10deg);
+  }
+}
+
+@-webkit-keyframes twoAnimationFrames {
+  0% {
+    -webkit-transform: translate(110px, 200px) rotate(0deg);
+  }
+  25% {
+    -webkit-transform: translate(33px, 120px) rotate(-13deg);
+  }
+  51% {
+    -webkit-transform: translate(166px, 81px) rotate(10deg);
+  }
+  81% {
+    -webkit-transform: translate(53px, 7px) rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: translate(53px, 7px) rotate(-10deg);
+  }
+}
+
+@-o-keyframes twoAnimationFrames {
+  0% {
+    -o-transform: translate(110px, 200px) rotate(0deg);
+  }
+  25% {
+    -o-transform: translate(33px, 120px) rotate(-13deg);
+  }
+  51% {
+    -o-transform: translate(166px, 81px) rotate(10deg);
+  }
+  81% {
+    -o-transform: translate(53px, 7px) rotate(-10deg);
+  }
+  100% {
+    -o-transform: translate(53px, 7px) rotate(-10deg);
+  }
+}
+
+@-ms-keyframes twoAnimationFrames {
+  0% {
+    -ms-transform: translate(110px, 200px) rotate(0deg);
+  }
+  25% {
+    -ms-transform: translate(33px, 120px) rotate(-13deg);
+  }
+  51% {
+    -ms-transform: translate(166px, 81px) rotate(10deg);
+  }
+  81% {
+    -ms-transform: translate(53px, 7px) rotate(-10deg);
+  }
+  100% {
+    -ms-transform: translate(53px, 7px) rotate(-10deg);
+  }
+}
